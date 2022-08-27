@@ -51,11 +51,11 @@ const comparePassword = catchAsync(async (req, res, next) => {
 });
 
 const protectUserAcounts = catchAsync(async (req, res, next) => {
-    const { id } = req.params;
+    const { userId } = req.client;
     const { user } = req;
 
-    if (id != user.id) {
-        return next(new appError('This acount does not belong to you', 403 /* Forbiden / denied access */))
+    if (userId != user.id) {
+        return next(new appError('This client does not belongs to you', 403 /* Forbiden / denied access */))
     };
 
     next();

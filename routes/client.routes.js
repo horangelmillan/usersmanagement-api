@@ -10,7 +10,7 @@ const {
 } = require('../controllers/clients.controllers');
 
 // Middlewares
-const { protectSession } = require('../middlewares/auth.middleware');
+const { protectSession, protectUserAcounts } = require('../middlewares/auth.middleware');
 const { isClient } = require('../middlewares/client.middlewares');
 const {
     addClientsValidators,
@@ -25,9 +25,10 @@ clientsRouter.post('/', addClientsValidators, createClient);
 clientsRouter.patch('/:id', isClient, updateClient);
 
 clientsRouter.get('/', getAllClients);
-clientsRouter.get('/:id', getClient);
 
-clientsRouter.delete('/:id', isClient, deleteClient);
-
+clientsRouter.use('/:id', isClient, protectUserAcounts)
+    .route('/:id')
+    .get(getClient)
+    .delete(deleteClient);
 
 module.exports = { clientsRouter };

@@ -56,16 +56,7 @@ const getAllClients = catchAsync(async (req, res, next) => {
 });
 
 const getClient = catchAsync(async (req, res, next) => {
-    const { user } = req;
-    const { id } = req.params;
-
-    const client = await Client.findOne({
-        where: {
-            id,
-            userId: user.id,
-            status: 'active'
-        }
-    });
+    const { client } = req.body;
 
     res.status(200).json({
         status: 'success',
