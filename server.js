@@ -20,7 +20,7 @@ const initServer = async () => {
         return console.log(err, 'something went wrong with the database connection, the server will not start.')
     };
 
-    app.listen(process.env.PORT, () => {
+    app.listen(process.env.PORT || 4000, () => {
         console.log(`server listen on port ${process.env.PORT}`)
     });
 };
