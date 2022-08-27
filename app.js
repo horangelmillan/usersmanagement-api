@@ -20,7 +20,8 @@ const corsOptions = {
   'origin': '*',
   'methods': 'GET, HEAD, PUT, PATCH, POST, DELETE',
   'preflightContinue': false,
-  'optionsSuccessStatus': 200
+  'optionsSuccessStatus': 200,
+  'Access-Control-Allow-Origin': '*'
 };
 
 app.use(cors(corsOptions));
