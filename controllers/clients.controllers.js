@@ -15,7 +15,7 @@ const createClient = catchAsync(async (req, res, next) => {
         phonenumberOne,
         phonenumberTwo,
         addressOne,
-        adressTwo
+        addressTwo
     } = req.body;
 
     const { user } = req;
@@ -30,7 +30,7 @@ const createClient = catchAsync(async (req, res, next) => {
         phonenumberOne,
         phonenumberTwo,
         addressOne,
-        adressTwo
+        addressTwo
     });
 
     res.status(200).json({
