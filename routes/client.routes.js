@@ -22,7 +22,7 @@ const clientsRouter = express.Router();
 clientsRouter.use(protectSession);
 
 clientsRouter.post('/', addClientsValidators, createClient);
-clientsRouter.patch('/:id', isClient, updateClient);
+clientsRouter.put('/:id', isClient, updateClient);
 
 clientsRouter.get('/', getAllClients);
 
