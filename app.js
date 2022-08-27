@@ -16,15 +16,13 @@ const app = express();
 // use middlewares
 app.use(express.json());
 
-const corsOptions = {
-  'origin': '*',
-  'methods': 'GET, HEAD, PUT, PATCH, POST, DELETE',
-  'preflightContinue': false,
-  'optionsSuccessStatus': 200,
-  'Access-Control-Allow-Origin': '*'
-};
-
-app.use(cors(corsOptions));
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", '*');
+  res.header("Access-Control-Allow-Credentials", true);
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+  res.header("Access-Control-Allow-Headers", 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
+  next();
+});
 
 app.use(morgan('dev'));
 app.use(compression());
