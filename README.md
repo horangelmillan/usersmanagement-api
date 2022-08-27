@@ -8,6 +8,8 @@ Indicar el puerto de ejecución (opcional), si no por defecto será el 4000
 
 PORT=
 
+---
+
 Indicar las credenciales de la base de datos local o de prueba en la nube para el entorno de desarrollo
 
 DEV_DIALECT=  mysq, postgres, etc... 
@@ -21,6 +23,8 @@ DEV_USERNAME=  usuario
 DEV_PASSWORD=  contraseña 
 
 DEV_DB=  base de datos 
+
+---
 
 Credenciales de la base de datos de produccion
 
@@ -36,6 +40,8 @@ DB_PASSWORD=  contraseña
 
 DB=  base de datos 
 
+---
+
 El sistema de registro requiere de encryptacion por lo tanto necesitará una llave para generar y desesncriptar los hash
 
 puede usar en javascript esta linea de codigo para generar su llave
@@ -43,6 +49,8 @@ puede usar en javascript esta linea de codigo para generar su llave
 `require('crypto').randomBytes(64).toString('hex');`
 
 SECRET_KEY=
+
+---
 
 Para iniciar el entorno development puede ejecutarlo con el comando:
 
