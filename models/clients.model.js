@@ -39,7 +39,7 @@ const Client = db.define('client', {
         type: DataTypes.STRING,
         allowNull: false
     },
-    adressTwo: {
+    addressTwo: {
         type: DataTypes.STRING,
         allowNull: true
     },
