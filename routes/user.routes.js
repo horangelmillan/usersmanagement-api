@@ -16,7 +16,11 @@ const {
 } = require('../middlewares/validators.middleware');
 const { hashPassword } = require('../middlewares/security.middleware');
 const { isEmail } = require('../middlewares/user.middleware');
-const { comparePassword, protectSession, protectUserAcounts } = require('../middlewares/auth.middleware');
+const {
+    comparePassword,
+    protectSession,
+    protectUserAcounts
+} = require('../middlewares/auth.middleware');
 
 // init router
 const usersRouter = express.Router();

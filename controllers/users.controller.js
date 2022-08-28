@@ -17,8 +17,6 @@ const createUser = catchAsync(async (req, res, next) => {
         password
     });
 
-    console.log(username, email, password);
-
     userCreated.password = undefined;
 
     res.status(200).json({

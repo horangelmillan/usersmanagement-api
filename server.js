@@ -11,11 +11,7 @@ const initServer = async () => {
         relateModels();
 
         await db.sync()
-            .then(() => console.log(
-                'database is synced',
-                /* generate a ramdom number with ->  require('crypto').randomBytes(64).toString('hex') */
-            ));
-
+            .then(() => console.log('database is synced'));
     } catch (err) {
         return console.log(err, 'something went wrong with the database connection, the server will not start.')
     };
