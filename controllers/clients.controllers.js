@@ -4,7 +4,7 @@ const { Client } = require('../models/clients.model');
 // Utils
 const { catchAsync } = require('../utils/catchAsync.util');
 
-// Create controllers
+// Create controller
 const createClient = catchAsync(async (req, res, next) => {
     const {
         DI,
