@@ -4,11 +4,11 @@ import compression from 'compression';
 import cors from 'cors';
 
 // Routes
-import { usersRouter } from './routes/user.routes';
-import { clientsRouter } from './routes/client.routes';
+import { usersRouter } from './routes/user.routes.js';
+import { clientsRouter } from './routes/client.routes.js';
 
 // Controllers
-import { globalErrorHandler } from './controllers/errors.controller';
+import { globalErrorHandler } from './controllers/errors.controller.js';
 
 // init express
 const app = express();
