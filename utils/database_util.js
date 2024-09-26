@@ -29,4 +29,4 @@ const paramsProd = {
 
 const db = new Sequelize(process.env.NODE_ENV === 'production' ? paramsProd : paramsDev);
 
-export default { db, DataTypes };
+export { db, DataTypes };

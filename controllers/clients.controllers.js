@@ -120,7 +120,7 @@ const updateClient = catchAsync(async (req, res, next) => {
     })
 });
 
-export default {
+export {
     createClient,
     updateClient,
     getAllClients,

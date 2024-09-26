@@ -25,4 +25,4 @@ const isClient = catchAsync(async (req, res, next) => {
     next()
 });
 
-export default { isClient };
+export { isClient };

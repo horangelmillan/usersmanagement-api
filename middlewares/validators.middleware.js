@@ -44,7 +44,7 @@ const addClientsValidators = [
     checkResult
 ];
 
-export default {
+export {
     createUserValidators,
     loginValidators,
     addClientsValidators

@@ -18,4 +18,4 @@ const hashPassword = catchAsync(async (req, res, next) => {
     next();
 });
 
-export default { hashPassword };
+export { hashPassword };

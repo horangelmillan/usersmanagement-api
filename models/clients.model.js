@@ -50,4 +50,4 @@ const Client = db.define('client', {
     }
 });
 
-export default { Client };
+export { Client };

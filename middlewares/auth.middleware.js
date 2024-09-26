@@ -61,7 +61,7 @@ const protectUserAcounts = catchAsync(async (req, res, next) => {
     next();
 });
 
-export default {
+export {
     protectSession,
     comparePassword,
     protectUserAcounts

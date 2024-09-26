@@ -25,4 +25,4 @@ usersRouter.use('/:id', protectUserAcounts)
     .patch(hashPassword, updateUser)
     .delete(deleteUser);
 
-export default { usersRouter };
+export { usersRouter };

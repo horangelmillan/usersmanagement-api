@@ -87,7 +87,7 @@ const getUser = catchAsync(async (req, res, next) => {
     });
 });
 
-export default {
+export {
     createUser,
     login,
     updateUser,

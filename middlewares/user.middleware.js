@@ -23,4 +23,4 @@ const isEmail = catchAsync(async (req, res, next) => {
     next();
 });
 
-export default { isEmail };
+export { isEmail };

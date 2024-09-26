@@ -22,4 +22,4 @@ clientsRouter.get('/:id', getClient);
 clientsRouter.delete('/:id', isClient, deleteClient);
 
 
-export default { clientsRouter };
+export { clientsRouter };

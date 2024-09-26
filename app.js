@@ -46,4 +46,4 @@ app.use('/api/v1/clients', clientsRouter);
 // Global error handdler
 app.use(globalErrorHandler);
 
-export default { app };
+export { app };

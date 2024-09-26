@@ -13,4 +13,4 @@ const relateModels = () => {
     Client.belongsTo(User);
 };
 
-export default { relateModels };
+export { relateModels };
