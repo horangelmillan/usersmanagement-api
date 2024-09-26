@@ -1,4 +1,4 @@
-import { app } from './app';
+import { app } from './app.js';
 import { db } from './utils/database_util';
 import { relateModels } from './models/relations.model';
 require('dotenv').config();
