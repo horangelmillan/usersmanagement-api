@@ -1,5 +1,6 @@
 import { Sequelize, DataTypes } from 'sequelize';
-require('dotenv').config();
+import { config } from 'dotenv';
+config();
 
 const paramsDev = {
     dialect: process.env.DEV_DIALECT,

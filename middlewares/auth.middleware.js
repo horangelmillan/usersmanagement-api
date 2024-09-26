@@ -1,6 +1,8 @@
-import { verify } from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
+const { verify } = jwt;
 import { compare } from 'bcrypt';
-require('dotenv').config();
+import { config } from 'dotenv';
+config();
 
 // Models
 import { User } from '../models/users.model.js';

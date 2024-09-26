@@ -1,12 +1,13 @@
-import { sign } from 'jsonwebtoken';
-require('dotenv').config();
+import jwt from 'jsonwebtoken';
+import { config } from 'dotenv';
+config();
+const { sign } = jwt;
 
 // Models
 import { User } from '../models/users.model.js';
 
 // Utils
-import _default from '../utils/catchAsync.util.js';
-const { catchAsync } = _default;
+import { catchAsync } from '../utils/catchAsync.util.js';
 
 // create controllers
 const createUser = catchAsync(async (req, res, next) => {

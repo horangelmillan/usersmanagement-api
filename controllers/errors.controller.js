@@ -1,4 +1,5 @@
-require('dotenv').config();
+import { config } from 'dotenv';
+config();
 
 // Utils
 import { appError } from '../utils/appError.util.js';
