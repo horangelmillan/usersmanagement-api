@@ -1,8 +1,8 @@
 // Models
-const { Client } = require('../models/clients.model');
+import { Client } from '../models/clients.model';
 
 // Utils
-const { catchAsync } = require('../utils/catchAsync.util');
+import { catchAsync } from '../utils/catchAsync.util';
 
 // Create controller
 const createClient = catchAsync(async (req, res, next) => {
@@ -120,7 +120,7 @@ const updateClient = catchAsync(async (req, res, next) => {
     })
 });
 
-module.exports = {
+export default {
     createClient,
     updateClient,
     getAllClients,

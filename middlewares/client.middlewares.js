@@ -1,9 +1,9 @@
 // Models
-const { Client } = require('../models/clients.model');
+const { Client } = require('../models/clients.model').default;
 
 // Utils
-const { catchAsync } = require('../utils/catchAsync.util');
-const { appError } = require('../utils/appError.util');
+const { catchAsync } = require('../utils/catchAsync.util').default;
+const { appError } = require('../utils/appError.util').default;
 
 const isClient = catchAsync(async (req, res, next) => {
     const { id, clientId } = req.body;

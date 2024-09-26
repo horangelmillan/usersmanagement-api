@@ -8,4 +8,4 @@ class appError extends Error {
     };
 };
 
-module.exports = { appError };
+export default { appError };

@@ -1,25 +1,16 @@
-const express = require('express');
+import { Router } from 'express';
 
 // Controllers
-const {
-    createUser,
-    login,
-    updateUser,
-    deleteUser,
-    getUser
-} = require('../controllers/users.controller');
+import { createUser, login, updateUser, deleteUser, getUser } from '../controllers/users.controller';
 
 // Middlewares
-const {
-    createUserValidators,
-    loginValidators
-} = require('../middlewares/validators.middleware');
-const { hashPassword } = require('../middlewares/security.middleware');
-const { isEmail } = require('../middlewares/user.middleware');
-const { comparePassword, protectSession, protectUserAcounts } = require('../middlewares/auth.middleware');
+import { createUserValidators, loginValidators } from '../middlewares/validators.middleware';
+import { hashPassword } from '../middlewares/security.middleware';
+import { isEmail } from '../middlewares/user.middleware';
+import { comparePassword, protectSession, protectUserAcounts } from '../middlewares/auth.middleware';
 
 // init router
-const usersRouter = express.Router();
+const usersRouter = Router();
 
 // child routes
 usersRouter.post('/signup', createUserValidators, hashPassword, createUser);
@@ -34,4 +25,4 @@ usersRouter.use('/:id', protectUserAcounts)
     .patch(hashPassword, updateUser)
     .delete(deleteUser);
 
-module.exports = { usersRouter };
+export default { usersRouter };

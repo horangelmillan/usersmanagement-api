@@ -1,4 +1,4 @@
-const { Sequelize, DataTypes } = require('sequelize');
+import { Sequelize, DataTypes } from 'sequelize';
 require('dotenv').config();
 
 const paramsDev = {
@@ -29,4 +29,4 @@ const paramsProd = {
 
 const db = new Sequelize(process.env.NODE_ENV === 'production' ? paramsProd : paramsDev);
 
-module.exports = { db, DataTypes };
+export default { db, DataTypes };

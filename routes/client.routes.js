@@ -1,23 +1,15 @@
-const express = require('express');
+import { Router } from 'express';
 
 // Controllers
-const {
-    createClient,
-    updateClient,
-    deleteClient,
-    getAllClients,
-    getClient
-} = require('../controllers/clients.controllers');
+import { createClient, updateClient, deleteClient, getAllClients, getClient } from '../controllers/clients.controllers';
 
 // Middlewares
-const { protectSession } = require('../middlewares/auth.middleware');
-const { isClient } = require('../middlewares/client.middlewares');
-const {
-    addClientsValidators,
-} = require('../middlewares/validators.middleware');
+import { protectSession } from '../middlewares/auth.middleware';
+import { isClient } from '../middlewares/client.middlewares';
+import { addClientsValidators } from '../middlewares/validators.middleware';
 
 // init router
-const clientsRouter = express.Router();
+const clientsRouter = Router();
 
 clientsRouter.use(protectSession);
 
@@ -30,4 +22,4 @@ clientsRouter.get('/:id', getClient);
 clientsRouter.delete('/:id', isClient, deleteClient);
 
 
-module.exports = { clientsRouter };
+export default { clientsRouter };

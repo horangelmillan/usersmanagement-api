@@ -1,6 +1,6 @@
 // models
-const { Client } = require('./clients.model');
-const { User } = require('./users.model');
+import { Client } from './clients.model';
+import { User } from './users.model';
 
 
 const relateModels = () => {
@@ -13,4 +13,4 @@ const relateModels = () => {
     Client.belongsTo(User);
 };
 
-module.exports = { relateModels };
+export default { relateModels };

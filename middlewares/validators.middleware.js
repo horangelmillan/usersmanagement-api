@@ -1,7 +1,7 @@
 const { body, validationResult } = require('express-validator');
 
 // Utils
-const { appError } = require('../utils/appError.util');
+const { appError } = require('../utils/appError.util').default;
 
 const checkResult = (req, res, next) => {
     const errors = validationResult(req);

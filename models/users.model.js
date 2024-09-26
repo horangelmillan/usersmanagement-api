@@ -1,4 +1,4 @@
-const { db, DataTypes } = require('../utils/database_util');
+import { db, DataTypes } from '../utils/database_util';
 
 const User = db.define('user', {
     id: {
@@ -27,4 +27,4 @@ const User = db.define('user', {
     }
 });
 
-module.exports = { User };
+export default { User };

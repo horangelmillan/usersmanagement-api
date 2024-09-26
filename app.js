@@ -1,20 +1,20 @@
-const express = require('express');
-const morgan = require('morgan');
-const compression = require('compression');
-const cors = require('cors');
+import express, { json } from 'express';
+import morgan from 'morgan';
+import compression from 'compression';
+import cors from 'cors';
 
 // Routes
-const { usersRouter } = require('./routes/user.routes');
-const { clientsRouter } = require('./routes/client.routes');
+import { usersRouter } from './routes/user.routes';
+import { clientsRouter } from './routes/client.routes';
 
 // Controllers
-const { globalErrorHandler } = require('./controllers/errors.controller');
+import { globalErrorHandler } from './controllers/errors.controller';
 
 // init express
 const app = express();
 
 // use middlewares
-app.use(express.json());
+app.use(json());
 
 const corsOptions = {
   credentials: true,
@@ -46,4 +46,4 @@ app.use('/api/v1/clients', clientsRouter);
 // Global error handdler
 app.use(globalErrorHandler);
 
-module.exports = { app };
+export default { app };

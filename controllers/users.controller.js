@@ -1,11 +1,12 @@
-const jsw = require('jsonwebtoken');
+import { sign } from 'jsonwebtoken';
 require('dotenv').config();
 
 // Models
-const { User } = require('../models/users.model');
+import { User } from '../models/users.model';
 
 // Utils
-const { catchAsync } = require('../utils/catchAsync.util');
+import _default from '../utils/catchAsync.util';
+const { catchAsync } = _default;
 
 // create controllers
 const createUser = catchAsync(async (req, res, next) => {
@@ -30,7 +31,7 @@ const createUser = catchAsync(async (req, res, next) => {
 const login = catchAsync(async (req, res, next) => {
     const { id } = req.body.user;
 
-    const token = jsw.sign({ id }, process.env.SECRET_KEY, {
+    const token = sign({ id }, process.env.SECRET_KEY, {
         expiresIn: '10m'
     });
 
@@ -86,7 +87,7 @@ const getUser = catchAsync(async (req, res, next) => {
     });
 });
 
-module.exports = {
+export default {
     createUser,
     login,
     updateUser,

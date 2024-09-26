@@ -1,4 +1,4 @@
-const { db, DataTypes } = require('../utils/database_util');
+import { db, DataTypes } from '../utils/database_util';
 
 const Client = db.define('client', {
     id: {
@@ -50,4 +50,4 @@ const Client = db.define('client', {
     }
 });
 
-module.exports = { Client };
+export default { Client };

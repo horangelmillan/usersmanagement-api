@@ -1,9 +1,9 @@
 // Models
-const { User } = require('../models/users.model');
+const { User } = require('../models/users.model').default;
 
 // Utils
-const { catchAsync } = require('../utils/catchAsync.util');
-const { appError } = require('../utils/appError.util');
+const { catchAsync } = require('../utils/catchAsync.util').default;
+const { appError } = require('../utils/appError.util').default;
 
 const isEmail = catchAsync(async (req, res, next) => {
     const { email } = req.body;

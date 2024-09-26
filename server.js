@@ -1,6 +1,6 @@
-const { app } = require('./app');
-const { db } = require('./utils/database_util');
-const { relateModels } = require('./models/relations.model');
+import { app } from './app';
+import { db } from './utils/database_util';
+import { relateModels } from './models/relations.model';
 require('dotenv').config();
 
 const initServer = async () => {

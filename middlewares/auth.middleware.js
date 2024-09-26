@@ -3,11 +3,11 @@ const bcrypt = require('bcrypt');
 require('dotenv').config();
 
 // Models
-const { User } = require('../models/users.model');
+const { User } = require('../models/users.model').default;
 
 // Utils
-const { catchAsync } = require('../utils/catchAsync.util');
-const { appError } = require('../utils/appError.util');
+const { catchAsync } = require('../utils/catchAsync.util').default;
+const { appError } = require('../utils/appError.util').default;
 
 // Create middlewares
 const protectSession = catchAsync(async (req, res, next) => {

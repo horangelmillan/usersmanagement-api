@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt');
 
 // Utils
-const { catchAsync } = require('../utils/catchAsync.util');
+const { catchAsync } = require('../utils/catchAsync.util').default;
 
 const hashPassword = catchAsync(async (req, res, next) => {
     const { password } = req.body;
