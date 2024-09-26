@@ -5,7 +5,7 @@ const { User } = require('../models/users.model');
 const { catchAsync } = require('../utils/catchAsync.util');
 const { appError } = require('../utils/appError.util');
 
-const isEmail = catchAsync(async (req, res, next) => {3
+const isEmail = catchAsync(async (req, res, next) => {
     const { email } = req.body;
 
     const user = await User.findOne({
