@@ -1,13 +1,13 @@
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt');
+import { verify } from 'jsonwebtoken';
+import { compare } from 'bcrypt';
 require('dotenv').config();
 
 // Models
-const { User } = require('../models/users.model').default;
+import { User } from '../models/users.model.js';
 
 // Utils
-const { catchAsync } = require('../utils/catchAsync.util').default;
-const { appError } = require('../utils/appError.util').default;
+import { catchAsync } from '../utils/catchAsync.util.js';
+import { appError } from '../utils/appError.util.js';
 
 // Create middlewares
 const protectSession = catchAsync(async (req, res, next) => {
@@ -21,7 +21,7 @@ const protectSession = catchAsync(async (req, res, next) => {
         return next(new appError('invalid session', 401 /* unauthorized */))
     };
 
-    const decrypt = jwt.verify(token, process.env.SECRET_KEY);
+    const decrypt = verify(token, process.env.SECRET_KEY);
 
     const user = await User.findOne({
         where: {
@@ -41,7 +41,7 @@ const protectSession = catchAsync(async (req, res, next) => {
 const comparePassword = catchAsync(async (req, res, next) => {
     const { password, user } = req.body;
 
-    const validatedUser = await bcrypt.compare(password, user.password);
+    const validatedUser = await compare(password, user.password);
 
     if (!validatedUser) {
         return next(new appError('invalid credentials', 401));
@@ -61,7 +61,7 @@ const protectUserAcounts = catchAsync(async (req, res, next) => {
     next();
 });
 
-module.exports = {
+export default {
     protectSession,
     comparePassword,
     protectUserAcounts

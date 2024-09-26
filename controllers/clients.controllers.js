@@ -1,8 +1,8 @@
 // Models
-import { Client } from '../models/clients.model';
+import { Client } from '../models/clients.model.js';
 
 // Utils
-import { catchAsync } from '../utils/catchAsync.util';
+import { catchAsync } from '../utils/catchAsync.util.js';
 
 // Create controller
 const createClient = catchAsync(async (req, res, next) => {

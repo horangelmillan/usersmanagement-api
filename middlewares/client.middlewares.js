@@ -1,9 +1,9 @@
 // Models
-const { Client } = require('../models/clients.model').default;
+import { Client } from '../models/clients.model.js';
 
 // Utils
-const { catchAsync } = require('../utils/catchAsync.util').default;
-const { appError } = require('../utils/appError.util').default;
+import { catchAsync } from '../utils/catchAsync.util.js';
+import { appError } from '../utils/appError.util.js';
 
 const isClient = catchAsync(async (req, res, next) => {
     const { id, clientId } = req.body;
@@ -25,4 +25,4 @@ const isClient = catchAsync(async (req, res, next) => {
     next()
 });
 
-module.exports = { isClient };
+export default { isClient };

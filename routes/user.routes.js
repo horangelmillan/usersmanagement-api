@@ -1,13 +1,13 @@
 import { Router } from 'express';
 
 // Controllers
-import { createUser, login, updateUser, deleteUser, getUser } from '../controllers/users.controller';
+import { createUser, login, updateUser, deleteUser, getUser } from '../controllers/users.controller.js';
 
 // Middlewares
-import { createUserValidators, loginValidators } from '../middlewares/validators.middleware';
-import { hashPassword } from '../middlewares/security.middleware';
-import { isEmail } from '../middlewares/user.middleware';
-import { comparePassword, protectSession, protectUserAcounts } from '../middlewares/auth.middleware';
+import { createUserValidators, loginValidators } from '../middlewares/validators.middleware.js';
+import { hashPassword } from '../middlewares/security.middleware.js';
+import { isEmail } from '../middlewares/user.middleware.js';
+import { comparePassword, protectSession, protectUserAcounts } from '../middlewares/auth.middleware.js';
 
 // init router
 const usersRouter = Router();

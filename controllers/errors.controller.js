@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 // Utils
-import { appError } from '../utils/appError.util';
+import { appError } from '../utils/appError.util.js';
 
 const sendErrorDev = (err, req, res) => {
     const statusCode = err.statusCode || 500;

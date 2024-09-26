@@ -1,6 +1,6 @@
 import { app } from './app.js';
-import { db } from './utils/database_util';
-import { relateModels } from './models/relations.model';
+import { db } from './utils/database_util.js';
+import { relateModels } from './models/relations.model.js';
 require('dotenv').config();
 
 const initServer = async () => {

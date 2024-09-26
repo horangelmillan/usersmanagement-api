@@ -1,12 +1,12 @@
 import { Router } from 'express';
 
 // Controllers
-import { createClient, updateClient, deleteClient, getAllClients, getClient } from '../controllers/clients.controllers';
+import { createClient, updateClient, deleteClient, getAllClients, getClient } from '../controllers/clients.controllers.js';
 
 // Middlewares
-import { protectSession } from '../middlewares/auth.middleware';
-import { isClient } from '../middlewares/client.middlewares';
-import { addClientsValidators } from '../middlewares/validators.middleware';
+import { protectSession } from '../middlewares/auth.middleware.js';
+import { isClient } from '../middlewares/client.middlewares.js';
+import { addClientsValidators } from '../middlewares/validators.middleware.js';
 
 // init router
 const clientsRouter = Router();

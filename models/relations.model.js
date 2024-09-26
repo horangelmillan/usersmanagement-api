@@ -1,6 +1,6 @@
 // models
-import { Client } from './clients.model';
-import { User } from './users.model';
+import { Client } from './clients.model.js';
+import { User } from './users.model.js';
 
 
 const relateModels = () => {

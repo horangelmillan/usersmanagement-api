@@ -1,14 +1,14 @@
-const bcrypt = require('bcrypt');
+import { genSalt, hash as _hash } from 'bcrypt';
 
 // Utils
-const { catchAsync } = require('../utils/catchAsync.util').default;
+import { catchAsync } from '../utils/catchAsync.util.js';
 
 const hashPassword = catchAsync(async (req, res, next) => {
     const { password } = req.body;
 
     if (password) {
-        const salt = await bcrypt.genSalt(12);
-    const hash = await bcrypt.hash(password, salt);
+        const salt = await genSalt(12);
+    const hash = await _hash(password, salt);
 
     req.body.password = hash;
 
@@ -18,4 +18,4 @@ const hashPassword = catchAsync(async (req, res, next) => {
     next();
 });
 
-module.exports = { hashPassword };
+export default { hashPassword };

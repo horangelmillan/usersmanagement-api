@@ -1,4 +1,4 @@
-import { db, DataTypes } from '../utils/database_util';
+import { db, DataTypes } from '../utils/database_util.js';
 
 const Client = db.define('client', {
     id: {

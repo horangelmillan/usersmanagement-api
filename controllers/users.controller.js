@@ -2,10 +2,10 @@ import { sign } from 'jsonwebtoken';
 require('dotenv').config();
 
 // Models
-import { User } from '../models/users.model';
+import { User } from '../models/users.model.js';
 
 // Utils
-import _default from '../utils/catchAsync.util';
+import _default from '../utils/catchAsync.util.js';
 const { catchAsync } = _default;
 
 // create controllers

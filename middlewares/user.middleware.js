@@ -1,9 +1,9 @@
 // Models
-const { User } = require('../models/users.model').default;
+import { User } from '../models/users.model.js';
 
 // Utils
-const { catchAsync } = require('../utils/catchAsync.util').default;
-const { appError } = require('../utils/appError.util').default;
+import { catchAsync } from '../utils/catchAsync.util.js';
+import { appError } from '../utils/appError.util.js';
 
 const isEmail = catchAsync(async (req, res, next) => {
     const { email } = req.body;
@@ -23,4 +23,4 @@ const isEmail = catchAsync(async (req, res, next) => {
     next();
 });
 
-module.exports = { isEmail };
+export default { isEmail };

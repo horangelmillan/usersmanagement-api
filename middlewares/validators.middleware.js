@@ -1,7 +1,7 @@
-const { body, validationResult } = require('express-validator');
+import { body, validationResult } from 'express-validator';
 
 // Utils
-const { appError } = require('../utils/appError.util').default;
+import { appError } from '../utils/appError.util.js';
 
 const checkResult = (req, res, next) => {
     const errors = validationResult(req);
@@ -44,7 +44,7 @@ const addClientsValidators = [
     checkResult
 ];
 
-module.exports = {
+export default {
     createUserValidators,
     loginValidators,
     addClientsValidators
