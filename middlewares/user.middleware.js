@@ -16,7 +16,7 @@ const isEmail = catchAsync(async (req, res, next) => {
     });
 
     if (!user) {
-        return next(new appError('This user is not exist anymore', 410));
+        return next(new appError('Invalid credentials', 410));
     };
 
     req.body.user = user;

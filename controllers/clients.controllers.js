@@ -93,6 +93,7 @@ const updateClient = catchAsync(async (req, res, next) => {
     const {
         email,
         name,
+        lastname,
         phonenumberOne,
         phonenumberTwo,
         addressOne,
@@ -104,6 +105,7 @@ const updateClient = catchAsync(async (req, res, next) => {
     await Client.update({
         email,
         name,
+        lastname,
         phonenumberOne,
         phonenumberTwo,
         addressOne,

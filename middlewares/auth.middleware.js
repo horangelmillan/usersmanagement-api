@@ -1,7 +1,8 @@
 import jwt from 'jsonwebtoken';
-const { verify } = jwt;
 import { compare } from 'bcrypt';
 import { config } from 'dotenv';
+
+const { verify } = jwt;
 config();
 
 // Models
@@ -23,7 +24,24 @@ const protectSession = catchAsync(async (req, res, next) => {
         return next(new appError('invalid session', 401 /* unauthorized */))
     };
 
-    const decrypt = verify(token, process.env.SECRET_KEY);
+    const decrypt = verify(token, process.env.SECRET_KEY, (err, decoded) => {
+        if (err) {
+            if (err.name === 'TokenExpiredError') {
+                return res.status(401).json({
+                    status: 'fail',
+                    message: 'Your session has expired! Please login again.',
+                    expiredAt: err.expiredAt
+                });
+            }
+
+            return res.status(401).json({
+                status: 'fail',
+                message: 'Token no válido.'
+            });
+        }
+
+        return decoded;
+    });
 
     const user = await User.findOne({
         where: {
