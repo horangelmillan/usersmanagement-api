@@ -18,7 +18,7 @@ app.use(json());
 
 const corsOptions = {
   credentials: true,
-  origin: ['https://usersmanagement-front.herokuapp.com/'],
+  origin: ['https://usersmanagement-front-production.up.railway.app/'],
   "Access-Control-Allow-Origin": '*',
   "Access-Control-Allow-Credentials": true,
   'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE, PATCH, OPTIONS',
