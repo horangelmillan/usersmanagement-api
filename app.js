@@ -16,7 +16,18 @@ const app = express();
 // use middlewares
 app.use(json());
 
-app.use(cors());
+const corsOptions = {
+  credentials: true,
+  origin: ['https://usersmanagement-front-production.up.railway.app'],
+  "Access-Control-Allow-Origin": '*',
+  "Access-Control-Allow-Credentials": true,
+  'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+  "Access-Control-Allow-Headers": 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json'
+};
+
+app.use(cors(corsOptions));
+
+app.options('*', cors());
 
 app.use(morgan('dev'));
 app.use(compression());
