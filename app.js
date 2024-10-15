@@ -17,33 +17,22 @@ const app = express();
 app.use(json());
 
 const corsOptions = {
+  origin: ['https://usersmanagement-front-production.up.railway.app'],
   credentials: true,
-  origin: ['https://usersmanagement-front-production.up.railway.app/'],
-  "Access-Control-Allow-Origin": '*',
-  "Access-Control-Allow-Credentials": true,
-  'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE, PATCH, OPTIONS',
-  "Access-Control-Allow-Headers": 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json'
+  methods: ['GET', 'PUT', 'POST', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization']
 };
-
-var allowCrossDomain = function (req, res, next) {
-  res.header('Access-Control-Allow-Origin', "*");
-  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
-  next();
-};
-
-app.use(allowCrossDomain);
 
 app.use(cors(corsOptions));
 
 app.use(morgan('dev'));
 app.use(compression());
 
-// main routes
+// Rutas principales
 app.use('/api/v1/users', usersRouter);
 app.use('/api/v1/clients', clientsRouter);
 
-// Global error handdler
+// Global error handler
 app.use(globalErrorHandler);
 
 export { app };
